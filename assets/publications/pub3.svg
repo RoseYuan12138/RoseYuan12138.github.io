@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3d6b3f"/>
+      <stop offset="100%" stop-color="#1d3f2a"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#g3)"/>
+  <!-- network traffic flow: packets, anomaly marked red -->
+  <g>
+    <!-- timeline base line -->
+    <line x1="60" y1="220" x2="540" y2="220" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <!-- normal packets -->
+    <g fill="rgba(255,255,255,0.7)">
+      <rect x="80"  y="200" width="16" height="40" rx="2"/>
+      <rect x="110" y="195" width="16" height="45" rx="2"/>
+      <rect x="140" y="205" width="16" height="35" rx="2"/>
+      <rect x="170" y="200" width="16" height="40" rx="2"/>
+      <rect x="200" y="190" width="16" height="50" rx="2"/>
+      <rect x="270" y="205" width="16" height="35" rx="2"/>
+      <rect x="300" y="195" width="16" height="45" rx="2"/>
+      <rect x="330" y="200" width="16" height="40" rx="2"/>
+      <rect x="380" y="195" width="16" height="45" rx="2"/>
+      <rect x="410" y="205" width="16" height="35" rx="2"/>
+      <rect x="440" y="200" width="16" height="40" rx="2"/>
+      <rect x="470" y="190" width="16" height="50" rx="2"/>
+      <rect x="500" y="200" width="16" height="40" rx="2"/>
+    </g>
+    <!-- anomalies (red, taller) -->
+    <g fill="#ff5544">
+      <rect x="232" y="160" width="16" height="80" rx="2"/>
+      <rect x="354" y="155" width="16" height="85" rx="2"/>
+    </g>
+    <!-- detection brackets above anomalies -->
+    <g stroke="#ff5544" stroke-width="1.5" fill="none">
+      <path d="M225 145 L225 135 L255 135 L255 145"/>
+      <path d="M347 140 L347 130 L377 130 L377 140"/>
+    </g>
+    <g font-family="DejaVu Sans, sans-serif" font-size="10" fill="#ffb0a8" text-anchor="middle">
+      <text x="240" y="125">anomaly</text>
+      <text x="362" y="120">anomaly</text>
+    </g>
+    <!-- transformer attention overlay (dashed arcs) -->
+    <g stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none" stroke-dasharray="3 3">
+      <path d="M90 280 Q300 320 510 280"/>
+      <path d="M150 290 Q300 330 450 290"/>
+    </g>
+    <text x="300" y="350" font-family="DejaVu Sans, sans-serif" font-size="10" fill="rgba(255,255,255,0.55)" letter-spacing="2" text-anchor="middle">SEMI-SUPERVISED · 97.6% F1 @ 1% LABELS</text>
+  </g>
+  <text x="300" y="50" font-family="DejaVu Sans, sans-serif" font-size="13" font-weight="500" fill="rgba(255,255,255,0.92)" letter-spacing="3" text-anchor="middle">TRANSFORMER-BASED NIDS  ·  CIKM 2022</text>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a4f8f"/>
+      <stop offset="100%" stop-color="#1d2952"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#g2)"/>
+  <!-- iterative image generation: 4 stages with refinement arrows and a dialogue bubble between -->
+  <g>
+    <!-- image stages -->
+    <rect x="50"  y="170" width="100" height="100" rx="8" fill="rgba(255,255,255,0.10)" stroke="rgba(255,255,255,0.45)" stroke-width="1.2"/>
+    <rect x="190" y="170" width="100" height="100" rx="8" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.55)" stroke-width="1.2"/>
+    <rect x="330" y="170" width="100" height="100" rx="8" fill="rgba(255,255,255,0.22)" stroke="rgba(255,255,255,0.7)"  stroke-width="1.2"/>
+    <rect x="470" y="170" width="100" height="100" rx="8" fill="rgba(255,255,255,0.32)" stroke="#fdfcf9" stroke-width="2"/>
+    <!-- crude shapes inside (vague image content) -->
+    <g fill="rgba(255,255,255,0.35)">
+      <circle cx="100" cy="210" r="14"/>
+      <circle cx="240" cy="210" r="16"/><rect x="222" y="225" width="36" height="20" rx="3"/>
+      <circle cx="380" cy="210" r="18"/><rect x="358" y="227" width="44" height="22" rx="3"/><circle cx="380" cy="252" r="6"/>
+      <circle cx="520" cy="208" r="20"/><rect x="495" y="226" width="50" height="24" rx="4"/><circle cx="520" cy="252" r="7"/><circle cx="500" cy="240" r="2"/><circle cx="540" cy="240" r="2"/>
+    </g>
+    <!-- dialogue bubbles between stages (alternating top/bottom for "twin" feedback) -->
+    <g font-family="DejaVu Sans, sans-serif" font-size="10" fill="rgba(255,255,255,0.85)">
+      <path d="M150 110 L190 110 L190 130 L185 130 L180 138 L175 130 L150 130 Z" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="170" y="125" text-anchor="middle">user</text>
+      <path d="M290 310 L330 310 L330 290 L325 290 L320 282 L315 290 L290 290 Z" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="310" y="305" text-anchor="middle">agent</text>
+      <path d="M430 110 L470 110 L470 130 L465 130 L460 138 L455 130 L430 130 Z" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+      <text x="450" y="125" text-anchor="middle">user</text>
+    </g>
+    <!-- arrows -->
+    <g stroke="rgba(255,255,255,0.6)" stroke-width="1.5" fill="none" stroke-linecap="round">
+      <path d="M150 220 L190 220" marker-end="url(#arr)"/>
+      <path d="M290 220 L330 220"/>
+      <path d="M430 220 L470 220"/>
+    </g>
+    <defs>
+      <marker id="arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+        <path d="M0,0 L6,3 L0,6 Z" fill="rgba(255,255,255,0.6)"/>
+      </marker>
+    </defs>
+  </g>
+  <text x="300" y="50"  font-family="DejaVu Sans, sans-serif" font-size="13" font-weight="500" fill="rgba(255,255,255,0.92)" letter-spacing="3" text-anchor="middle">TWIN CO-ADAPTIVE DIALOGUE  ·  ACM MM 2025</text>
+  <text x="300" y="370" font-family="DejaVu Sans, sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" letter-spacing="2" text-anchor="middle">ITERATIVE IMAGE REFINEMENT</text>
+</svg>

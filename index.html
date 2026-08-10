@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>Rose (Xinhang) Yuan — Homepage</title>
+<meta name="description" content="Rose (Xinhang) Yuan is a Machine Learning Engineer at TikTok working on large-scale recommendation systems for TikTok Live. M.S. from Washington University in St. Louis, B.E. from Tongji University.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Rose (Xinhang) Yuan — Homepage">
+<meta property="og:description" content="Machine Learning Engineer at TikTok. Working on large-scale recommendation systems.">
+<meta property="og:image" content="./assets/og-image.png">
+<meta property="og:url" content="https://roseyuan.dev/">
+<meta property="og:site_name" content="Rose Yuan">
+
+<!-- Twitter card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rose (Xinhang) Yuan — Homepage">
+<meta name="twitter:description" content="Machine Learning Engineer at TikTok. Working on large-scale recommendation systems.">
+<meta name="twitter:image" content="./assets/og-image.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme = saved || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {}
+  })();
+</script>
+<style>
+  :root,
+  :root[data-theme="light"] {
+    --text:        #1a1a1a;
+    --text-soft:   #4a4a4a;
+    --text-muted:  #8a8a8a;
+    --link:        #b4524a;
+    --link-hover:  #8a3a33;
+    --bg:          #fdfcf9;
+    --bg-alt:      #f5f2eb;
+    --border:      #e7e3d8;
+    --rule:        #d8d4c8;
+    --nav-bg:      rgba(253, 252, 249, 0.92);
+    --pill-hover-fg: #fff;
+    --widget-bg:   #ffffff;
+    --widget-shadow: 0 4px 24px rgba(60, 50, 30, 0.10);
+    --max-w:       820px;
+  }
+  :root[data-theme="dark"] {
+    --text:        #ece8df;
+    --text-soft:   #b6b1a3;
+    --text-muted:  #7d7869;
+    --link:        #d68a82;
+    --link-hover:  #e8a59c;
+    --bg:          #15140f;
+    --bg-alt:      #211f19;
+    --border:      #2e2b24;
+    --rule:        #3a362d;
+    --nav-bg:      rgba(21, 20, 15, 0.88);
+    --pill-hover-fg: #15140f;
+    --widget-bg:   #1d1b15;
+    --widget-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Lora', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color .25s ease, color .25s ease;
+  }
+  a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color .15s ease, color .15s ease;
+  }
+  a:hover { color: var(--link-hover); border-bottom-color: var(--link-hover); }
+
+  nav.top {
+    position: sticky; top: 0;
+    background: var(--nav-bg);
+    backdrop-filter: saturate(160%) blur(8px);
+    -webkit-backdrop-filter: saturate(160%) blur(8px);
+    border-bottom: 1px solid var(--border);
+    z-index: 50;
+    transition: background-color .25s ease, border-color .25s ease;
+  }
+  nav.top .inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  nav.top .brand {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 700; font-size: 15px;
+    color: var(--text); border: none; letter-spacing: -0.01em;
+  }
+  nav.top .right { display: flex; align-items: center; gap: 18px; }
+  nav.top ul {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; gap: 22px;
+    font-family: 'Inter', system-ui, sans-serif; font-size: 14px;
+  }
+  nav.top ul a { color: var(--text-soft); border: none; }
+  nav.top ul a:hover { color: var(--link); }
+
+  .theme-toggle {
+    width: 32px; height: 32px;
+    border: 1px solid var(--border);
+    background: var(--bg-alt);
+    border-radius: 50%; cursor: pointer;
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 0; color: var(--text-soft);
+    transition: background-color .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
+  }
+  .theme-toggle:hover { color: var(--link); border-color: var(--rule); transform: scale(1.06); }
+  .theme-toggle svg { width: 16px; height: 16px; }
+  .theme-toggle .icon-moon { display: none; }
+  .theme-toggle .icon-sun  { display: block; }
+  :root[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
+  :root[data-theme="dark"] .theme-toggle .icon-sun  { display: none; }
+
+  main { max-width: var(--max-w); margin: 0 auto; padding: 56px 24px 80px; }
+  section { margin-bottom: 56px; }
+  section h2 {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 13px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0 0 24px; padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 180px;
+    gap: 36px; align-items: start;
+    margin-bottom: 48px;
+  }
+  .hero h1 {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 32px; font-weight: 700;
+    letter-spacing: -0.02em; margin: 0 0 6px;
+  }
+  .hero .subtitle {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px; color: var(--text-muted);
+    margin: 0 0 22px; letter-spacing: 0.02em;
+  }
+  .hero p { margin: 0 0 14px; }
+  .portrait {
+    width: 180px; height: 180px;
+    border-radius: 50%; object-fit: cover;
+    background: var(--bg-alt); border: 1px solid var(--border);
+    transition: background-color .25s ease, border-color .25s ease;
+  }
+  :root[data-theme="dark"] .portrait { filter: brightness(0.92); }
+
+  .socials {
+    margin-top: 18px;
+    display: flex; flex-wrap: wrap; gap: 18px;
+    font-family: 'Inter', system-ui, sans-serif; font-size: 14px;
+  }
+  .socials a {
+    color: var(--text-soft); border: none;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .socials a:hover { color: var(--link); }
+  .socials svg { width: 16px; height: 16px; }
+
+  .news .year {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.1em;
+    color: var(--text-muted); margin: 22px 0 10px;
+  }
+  .news .item {
+    display: grid;
+    grid-template-columns: 1fr 90px; gap: 18px;
+    padding: 10px 0; border-bottom: 1px dashed var(--border);
+  }
+  .news .item:last-child { border-bottom: none; }
+  .news .date {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 13px; font-style: italic;
+    color: var(--text-muted); text-align: right; white-space: nowrap;
+  }
+  .news .body { font-size: 16px; }
+
+  .entry {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 18px; padding: 16px 0;
+    border-bottom: 1px solid var(--border); align-items: center;
+  }
+  .entry:last-child { border-bottom: none; }
+  .entry .logo {
+    width: 56px; height: 56px;
+    border-radius: 10px;
+    background: var(--bg-alt); border: 1px solid var(--border);
+    object-fit: contain; padding: 6px;
+    transition: background-color .25s ease, border-color .25s ease;
+  }
+  :root[data-theme="dark"] .entry .logo { background: #fafafa; border-color: var(--border); }
+  .entry .meta { font-size: 16px; }
+  .entry .meta strong {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 16px; font-weight: 600; color: var(--text);
+  }
+  .entry .meta .when {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-style: italic; color: var(--text-muted);
+    font-size: 14px; margin-left: 4px;
+  }
+  .entry .meta .role { font-size: 15px; color: var(--text-soft); display: block; margin-top: 2px; }
+  .entry .meta .note { font-size: 14px; color: var(--text-muted); display: block; margin-top: 2px; }
+
+  .pub {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 22px; padding: 22px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .pub:last-child { border-bottom: none; }
+  .pub .thumb {
+    width: 200px; height: 133px;
+    object-fit: cover; border-radius: 6px;
+    border: 1px solid var(--border); background: var(--bg-alt);
+  }
+  .pub h3 {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 17px; font-weight: 600;
+    margin: 0 0 6px; line-height: 1.35;
+  }
+  .pub .authors { font-size: 14px; color: var(--text-soft); margin: 0 0 4px; }
+  .pub .authors em { font-weight: 600; font-style: normal; color: var(--text); }
+  .pub .venue {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 13px; font-style: italic; color: var(--text-muted); margin: 0 0 8px;
+  }
+  .pub .abs { font-size: 15px; color: var(--text-soft); margin: 0 0 10px; }
+  .pub .links {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 13px; display: flex; gap: 14px; flex-wrap: wrap;
+  }
+  .pub .links a {
+    padding: 3px 10px; border: 1px solid var(--border);
+    border-radius: 999px; background: var(--bg-alt);
+    color: var(--text-soft);
+  }
+  .pub .links a:hover { background: var(--link); color: var(--pill-hover-fg); border-color: var(--link); }
+
+  /* compact pub list (for secondary publications) */
+  .pub-compact {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 18px; padding: 12px 0;
+    border-bottom: 1px dashed var(--border);
+    align-items: baseline;
+  }
+  .pub-compact:last-child { border-bottom: none; }
+
+  .pubs-subhead {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 36px 0 14px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed var(--border);
+  }
+
+  /* ───── project entry ───── */
+  .project-entry {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .project-entry:last-child { border-bottom: none; }
+  .project-entry .pe-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 6px;
+  }
+  .project-entry .pe-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .project-entry .pe-when {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+  .project-entry .pe-tagline {
+    font-size: 15px;
+    color: var(--text-soft);
+    margin: 0 0 6px;
+    font-style: italic;
+  }
+  .project-entry .pe-desc {
+    font-size: 15px;
+    color: var(--text-soft);
+    margin: 0 0 10px;
+    line-height: 1.65;
+  }
+  .project-entry .pe-honors {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+  .project-entry .pe-honors strong { color: var(--text); }
+  .pub-compact .pc-venue {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--link);
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 3px 6px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .pub-compact .pc-body { font-size: 15px; }
+  .pub-compact .pc-body em { font-weight: 600; font-style: normal; color: var(--text); }
+  .pub-compact .pc-body .pc-desc { color: var(--text-muted); font-size: 14px; display: block; margin-top: 2px; }
+
+  .honor {
+    display: grid;
+    grid-template-columns: 1fr 130px;
+    gap: 18px; padding: 8px 0;
+    border-bottom: 1px dashed var(--border);
+  }
+  .honor:last-child { border-bottom: none; }
+  .honor .date {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 13px; font-style: italic;
+    color: var(--text-muted); text-align: right;
+  }
+
+  .about p { margin: 0 0 12px; }
+  .about strong { font-weight: 600; }
+
+  /* ───── blog card ───── */
+  .blog-card {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 20px;
+    padding: 22px 24px;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--link);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text);
+    transition: background-color .2s ease, transform .15s ease, border-color .2s ease;
+  }
+  .blog-card:hover {
+    background: var(--bg);
+    border-color: var(--rule);
+    border-left-color: var(--link-hover);
+    transform: translateY(-2px);
+  }
+  .blog-card-emoji {
+    font-size: 44px;
+    line-height: 1;
+    align-self: center;
+    text-align: center;
+  }
+  .blog-card-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 8px;
+    letter-spacing: 0.01em;
+  }
+  .blog-card-desc {
+    display: block;
+    font-size: 15.5px;
+    color: var(--text-soft);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+  .blog-card-desc strong { color: var(--text); font-weight: 600; }
+  .blog-card-cta {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--link);
+  }
+  .blog-card:hover .blog-card-cta { color: var(--link-hover); }
+  .about .todo {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 14px;
+    padding: 14px 16px;
+    background: var(--bg-alt);
+    border-left: 3px solid var(--link);
+    border-radius: 0 6px 6px 0;
+  }
+
+  footer {
+    max-width: var(--max-w); margin: 0 auto;
+    padding: 28px 24px 48px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 12px; color: var(--text-muted);
+    border-top: 1px solid var(--border); text-align: center;
+  }
+  footer .updated { margin-bottom: 4px; }
+
+  .visitor-widget {
+    position: fixed; right: 20px; bottom: 20px;
+    width: 168px;
+    background: var(--widget-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 12px 12px;
+    box-shadow: var(--widget-shadow);
+    z-index: 40;
+    font-family: 'Inter', system-ui, sans-serif;
+    transition: background-color .25s ease, border-color .25s ease, transform .2s ease;
+  }
+  .visitor-widget:hover { transform: translateY(-2px); }
+  .visitor-widget .vw-label {
+    font-size: 10px; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--text-muted);
+    text-align: center; margin-bottom: 6px;
+  }
+  .visitor-widget .vw-globe { width: 100%; aspect-ratio: 1; display: block; }
+  .visitor-widget .vw-stats {
+    margin-top: 8px; text-align: center;
+    font-size: 12px; color: var(--text-soft); line-height: 1.4;
+  }
+  .visitor-widget .vw-stats strong { color: var(--text); font-weight: 600; }
+  .visitor-widget .vw-close {
+    position: absolute; top: 6px; right: 8px;
+    width: 18px; height: 18px;
+    border: none; background: transparent;
+    color: var(--text-muted); cursor: pointer;
+    font-size: 14px; line-height: 1; padding: 0;
+    opacity: 0.5; transition: opacity .15s ease;
+  }
+  .visitor-widget .vw-close:hover { opacity: 1; color: var(--link); }
+  .visitor-widget.is-hidden { display: none; }
+  .vw-dot {
+    fill: #ff5b4a;
+    animation: vwPulse 2.4s ease-in-out infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+  .vw-dot:nth-child(2) { animation-delay: 0.3s; }
+  .vw-dot:nth-child(3) { animation-delay: 0.6s; }
+  .vw-dot:nth-child(4) { animation-delay: 0.9s; }
+  .vw-dot:nth-child(5) { animation-delay: 1.2s; }
+  .vw-dot:nth-child(6) { animation-delay: 1.5s; }
+  .vw-dot:nth-child(7) { animation-delay: 1.8s; }
+  .vw-dot:nth-child(8) { animation-delay: 2.1s; }
+  @keyframes vwPulse {
+    0%, 100% { opacity: 0.55; transform: scale(0.85); }
+    50%      { opacity: 1;    transform: scale(1.25); }
+  }
+
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    main { padding: 36px 20px 60px; }
+    .hero { grid-template-columns: 1fr; gap: 24px; }
+    .portrait { width: 140px; height: 140px; margin: 0 auto; }
+    .hero h1 { font-size: 26px; text-align: center; }
+    .hero .subtitle { text-align: center; }
+    .hero p { text-align: left; }
+    .socials { justify-content: center; }
+    nav.top ul { gap: 14px; }
+    nav.top ul li:last-child { display: none; }
+    .pub { grid-template-columns: 1fr; }
+    .pub .thumb { width: 100%; height: auto; aspect-ratio: 3 / 2; }
+    .pub-compact { grid-template-columns: 1fr; gap: 6px; }
+    .pub-compact .pc-venue { justify-self: start; }
+    .news .item, .honor { grid-template-columns: 1fr; gap: 4px; }
+    .news .date, .honor .date { text-align: left; }
+    .visitor-widget { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="inner">
+    <a href="#" class="brand">Rose Yuan</a>
+    <div class="right">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="https://roseyuan12138.github.io/my-blog/" target="_blank" rel="noopener">Blog ↗</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme" title="Toggle theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main id="home">
+
+  <!-- ───── Hero ───── -->
+  <div class="hero">
+    <div>
+      <h1>Rose (Xinhang) Yuan</h1>
+      <div class="subtitle">Machine Learning Engineer · Bay Area</div>
+      <p>Hi there 👋 I'm Rose. I'm a Machine Learning Engineer at <strong>TikTok</strong>, working on large-scale ranking and recommendation systems for <strong>TikTok Live</strong>.</p>
+      <p>My current work focuses on multimodal content understanding, pre-ranking model architecture (User-Graph decoupled, Causal Attention + SparseMoE), and training/serving efficiency at production scale. I was honored to receive the <em>Best New Hire</em> award and a promotion in my first year.</p>
+      <p>Before TikTok, I received my M.S. in Computer Science from <a href="https://wustl.edu/">Washington University in St. Louis</a> and my B.E. from <a href="https://www.tongji.edu.cn/">Tongji University</a>. I've published first-author work at <strong>CIKM</strong> and contributed to <strong>NeurIPS</strong> as part of the CUHK-Shenzhen Deepfake research team, with recent first-author work under review at <strong>RecSys 2026</strong>.</p>
+      <p>Always happy to chat about ranking systems, multimodal ML, or the craft of shipping research into production — feel free to reach out.</p>
+
+      <div class="socials">
+        <a href="mailto:yuanxinhang200211@gmail.com" title="Email">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          Email
+        </a>
+        <a href="https://www.linkedin.com/in/rose-xinhang-yuan-362ab9292/" title="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM8 19H5V8h3v11zM6.5 6.7c-1 0-1.7-.7-1.7-1.7s.8-1.7 1.8-1.7 1.7.8 1.7 1.7-.8 1.7-1.8 1.7zM20 19h-3v-5.6c0-1.5-.6-2-1.5-2s-1.5.6-1.5 2V19h-3V8h3v1.3c.5-.8 1.6-1.5 2.8-1.5 2.1 0 3.2 1.3 3.2 4V19z"/></svg>
+          LinkedIn
+        </a>
+        <a href="#" title="Google Scholar">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5.2 8.6L12 3l6.8 5.6V11h-1.5V9.8L12 14 6.7 9.8V11H5.2V8.6zM12 15.5c-2.5 0-4.5 2-4.5 4.5h9c0-2.5-2-4.5-4.5-4.5z"/></svg>
+          Scholar
+        </a>
+        <a href="#" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.7-5.5 6 .5.4.8 1 .8 2.1v3.2c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+          GitHub
+        </a>
+        <a href="#" title="CV">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
+          CV
+        </a>
+        <a href="#" title="Twitter">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 3H22l-7.5 8.6L23 21h-6.8l-5.3-6.9L4.7 21H1.6l8-9.2L1 3h7l4.8 6.3L18.9 3zm-1.2 16h1.9L7.4 5H5.4l12.3 14z"/></svg>
+          Twitter
+        </a>
+      </div>
+    </div>
+
+    <img class="portrait"
+         src="./assets/profile.jpeg"
+         alt="Portrait of Rose Yuan">
+  </div>
+
+  <!-- ───── News ───── -->
+  <section class="news" id="news">
+    <h2>News</h2>
+
+    <div class="year">2026</div>
+    <div class="item">
+      <div class="body">Released our work <em>FLUID: From Ephemeral IDs to Multimodal Semantic Codes</em> on <a href="https://arxiv.org/abs/2605.21832" target="_blank" rel="noopener">arXiv</a> — first-author paper from my TikTok Live team. Under review at <strong>RecSys 2026</strong>.</div>
+      <div class="date">May 2026</div>
+    </div>
+    <div class="item">
+      <div class="body">Promoted at <a href="https://www.tiktok.com/">TikTok</a> after a year on the Live Recommendation team — beyond grateful for my mentor, tech lead, and the whole team 🎉</div>
+      <div class="date">Mar 2026</div>
+    </div>
+
+    <div class="year">2025</div>
+    <div class="item">
+      <div class="body">Honored to receive the <strong>Best New Hire</strong> award at TikTok 🎉</div>
+      <div class="date">Dec 2025</div>
+    </div>
+    <div class="item">
+      <div class="body">Joined <a href="https://www.tiktok.com/">TikTok</a> as a Machine Learning Engineer on the TikTok Live recommendation team!</div>
+      <div class="date">Jul 2025</div>
+    </div>
+    <div class="item">
+      <div class="body">Graduated from <a href="https://wustl.edu/">Washington University in St. Louis</a> with an M.S. in Computer Science 💙</div>
+      <div class="date">May 2025</div>
+    </div>
+    <div class="year">2023</div>
+    <div class="item">
+      <div class="body"><em>DeepfakeBench: A Comprehensive Benchmark of Deepfake Detection</em> accepted to <strong>NeurIPS 2023</strong>!</div>
+      <div class="date">Sep 2023</div>
+    </div>
+    <div class="item">
+      <div class="body">Started my M.S. at Washington University in St. Louis. 🎓</div>
+      <div class="date">Aug 2023</div>
+    </div>
+
+    <div class="year">2022</div>
+    <div class="item">
+      <div class="body">First-author paper <em>An Extreme Semi-Supervised Framework Based on Transformer for NIDS</em> accepted to <strong>CIKM 2022</strong>.</div>
+      <div class="date">Aug 2022</div>
+    </div>
+  </section>
+
+  <!-- ───── Experience ───── -->
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="entry">
+      <img class="logo" src="./assets/tiktok_logo.jpg" alt="TikTok">
+      <div class="meta">
+        <strong>TikTok</strong>
+        <span class="when">Jul. 2025 – Present</span>
+        <span class="role">Machine Learning Engineer · Recommendation Systems, TikTok Live</span>
+        <span class="note">Multimodal ranking, pre-ranking architecture, training &amp; serving efficiency. <em>Best New Hire</em> award.</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <img class="logo" src="./assets/washington_university_in_st_louis_logo.jpg" alt="WashU">
+      <div class="meta">
+        <strong>Washington University in St. Louis</strong>
+        <span class="when">Sep. 2023 – Jan. 2025</span>
+        <span class="role">Research Assistant · Computer Security &amp; Privacy Lab</span>
+        <span class="note">Adversarial AI &amp; model robustness — low-rank adaptation for adversarial examples.</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <img class="logo" src="./assets/the_chinese_university_of_hong_kong_logo.jpg" alt="CUHK Shenzhen">
+      <div class="meta">
+        <strong>The Chinese University of Hong Kong, Shenzhen</strong>
+        <span class="when">Jan. 2023 – Aug. 2023</span>
+        <span class="role">Research Assistant · Intelligent Digital Economy Security Lab</span>
+        <span class="note">DeepfakeBench — large-scale deepfake detection benchmarking framework.</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <img class="logo" src="./assets/tongji_university_logo.jpg" alt="Tongji University">
+      <div class="meta">
+        <strong>Tongji University</strong>
+        <span class="when">Aug. 2021 – Dec. 2024</span>
+        <span class="role">Research Assistant · ADMIS Lab &amp; Tsinghua Network Research Lab</span>
+        <span class="note">Modality-aware sentiment analysis (TriCorT); Transformer-based network intrusion detection.</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <img class="logo" src="./assets/tongji_university_logo.jpg" alt="Tongji University">
+      <div class="meta">
+        <strong>Tongji University · Informatization Office</strong>
+        <span class="when">Sep. 2020 – Jun. 2023</span>
+        <span class="role">Information Security Analyst (Part-time)</span>
+        <span class="note">Campus IT security throughout undergrad — almost three years of hands-on network defense alongside coursework. The on-the-job exposure fed directly into my <strong>3rd Prize at TongjiCTF</strong> and ultimately my <em>CIKM 2022</em> first-author paper on Transformer-based network intrusion detection.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── Education ───── -->
+  <section id="education">
+    <h2>Education</h2>
+
+    <div class="entry">
+      <img class="logo" src="./assets/washington_university_in_st_louis_logo.jpg" alt="WashU">
+      <div class="meta">
+        <strong>Washington University in St. Louis</strong>
+        <span class="when">Aug. 2023 – May. 2025</span>
+        <span class="role">M.S. in Computer Science</span>
+        <span class="note">GPA 3.70 / 4.00</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <img class="logo" src="./assets/tongji_university_logo.jpg" alt="Tongji University">
+      <div class="meta">
+        <strong>Tongji University</strong>
+        <span class="when">Sep. 2019 – Jul. 2023</span>
+        <span class="role">B.E. in Computer Science and Technology</span>
+        <span class="note"><strong>Class rank 1 / 54</strong> · Outstanding Graduate</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── Publications ───── -->
+  <section id="publications">
+    <h2>Publications</h2>
+
+    <div class="pub">
+      <img class="thumb" src="./assets/publications/pub_fluid.png" alt="FLUID system overview">
+      <div>
+        <h3>FLUID: From Ephemeral IDs to Multimodal Semantic Codes for Industrial-Scale Livestreaming Recommendation</h3>
+        <p class="authors"><em>Xinhang Yuan</em>, Zexi Huang, Anjia Cao, Xudong Lu, Zikai Wang, Penghao Zhou, Chang Liu, Wentao Guo, Qinglei Wang</p>
+        <p class="venue">Under review · RecSys 2026 · arXiv:2605.21832</p>
+        <p class="abs">FLUID is the first framework to fully retire the candidate-side item ID from a production-scale livestreaming ranker. We couple a cross-domain multimodal encoder — jointly trained on short videos and livestreams — that produces discrete hierarchical codes (<em>LUCID</em>), with a late-fusion, ID-free design that injects slice-level and room-level LUCID as independent tokens, stabilized by a staged warmup under online incremental training. Deployed on TikTok's industrial livestreaming recommenders.</p>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2605.21832" target="_blank" rel="noopener">Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <img class="thumb" src="./assets/publications/pub1.png" alt="DeepfakeBench teaser">
+      <div>
+        <h3>DeepfakeBench: A Comprehensive Benchmark of Deepfake Detection</h3>
+        <p class="authors">Z. Yan, Y. Zhang, X. Yuan, S. Lyu, B. Wu <em>et al.</em></p>
+        <p class="venue">NeurIPS 2023</p>
+        <p class="abs">A large-scale benchmarking framework for deepfake detection: automated data pipelines, integration of multiple detection models, and standardized evaluation across diverse datasets — addressing inconsistencies in detection methodologies at scale.</p>
+        <div class="links">
+          <a href="https://proceedings.neurips.cc/paper_files/paper/2023/file/0e735e4b4f07de483cbe250130992726-Paper-Datasets_and_Benchmarks.pdf" target="_blank" rel="noopener">NeurIPS PDF</a>
+          <a href="https://arxiv.org/abs/2307.01426" target="_blank" rel="noopener">arXiv</a>
+          <a href="https://github.com/SCLBD/DeepfakeBench" target="_blank" rel="noopener">Code</a>
+          <a href="https://openreview.net/forum?id=hizSx8pf0U" target="_blank" rel="noopener">OpenReview</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub">
+      <img class="thumb" src="./assets/publications/pub3.svg" alt="Transformer NIDS teaser">
+      <div>
+        <h3>An Extreme Semi-Supervised Framework Based on Transformer for Network Intrusion Detection</h3>
+        <p class="authors"><em>Xinhang Yuan</em>, et al.</p>
+        <p class="venue">CIKM 2022</p>
+        <p class="abs">The first application of Transformer architectures to network intrusion detection. A semi-supervised learning pipeline that identifies network anomalies, achieving <strong>97.6% F1</strong> accuracy with only <strong>1%</strong> labeled data.</p>
+        <div class="links">
+          <a href="https://drive.google.com/file/d/1xQUiXjzPk56S5-n9wDhFrgJWwUMSy1th/view" target="_blank" rel="noopener">Paper PDF</a>
+          <a href="https://dl.acm.org/doi/10.1145/3511808.3557588" target="_blank" rel="noopener">ACM DL</a>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="pubs-subhead">Co-authored Publications</h3>
+
+    <div class="pub-compact">
+      <div class="pc-venue">ACM MM 2025</div>
+      <div class="pc-body">
+        <em>Twin Co-Adaptive Dialogue for Progressive Image Generation</em>
+        <span class="pc-desc">J. Wang, Y. He, &hellip;, <strong>X. Yuan</strong> (10/15), et al. &middot; <a href="https://arxiv.org/abs/2504.14868" target="_blank" rel="noopener">arXiv</a> &middot; <a href="https://dl.acm.org/doi/10.1145/3746027.3755141" target="_blank" rel="noopener">ACM</a></span>
+      </div>
+    </div>
+
+    <div class="pub-compact">
+      <div class="pc-venue">CPAL 2026</div>
+      <div class="pc-body">
+        <em>Efficient Temporal Consistency in Diffusion-Based Video Editing with Adaptor Modules</em>
+        <span class="pc-desc">X. Song, Y. He, &hellip;, <strong>X. Yuan</strong> (6/14), et al. &middot; Proceedings Track &middot; <a href="https://arxiv.org/abs/2504.16016" target="_blank" rel="noopener">arXiv</a> &middot; <a href="https://cpal.cc/proceedings_track/" target="_blank" rel="noopener">CPAL</a></span>
+      </div>
+    </div>
+
+    <div class="pub-compact">
+      <div class="pc-venue">CPAL 2026</div>
+      <div class="pc-body">
+        <em>Enhancing Low-Cost Video Editing with Lightweight Adaptors and Temporal-Aware Inversion</em>
+        <span class="pc-desc">Y. He, S. Li, &hellip;, <strong>X. Yuan</strong> (6/14), et al. &middot; Proceedings Poster &middot; <a href="https://arxiv.org/abs/2501.04606" target="_blank" rel="noopener">arXiv</a> &middot; <a href="https://openreview.net/forum?id=qUDhbQUstF" target="_blank" rel="noopener">OpenReview</a></span>
+      </div>
+    </div>
+
+    <div class="pub-compact">
+      <div class="pc-venue">ICLR 2026</div>
+      <div class="pc-body">
+        <em>Enhancing Code LLMs with Reinforcement Learning in Code Generation: A Survey</em>
+        <span class="pc-desc">J. Wang, Z. Zhang, &hellip;, <strong>X. Yuan</strong> (13/21), et al. &middot; Workshop on LLM Reasoning &middot; <a href="https://arxiv.org/abs/2412.20367" target="_blank" rel="noopener">arXiv</a> &middot; <a href="https://openreview.net/forum?id=dsk1xSNY4J" target="_blank" rel="noopener">OpenReview</a></span>
+      </div>
+    </div>
+
+    <div class="pub-compact">
+      <div class="pc-venue">WWW 2026</div>
+      <div class="pc-body">
+        <em>SCORE: Story Coherence and Retrieval Enhancement for AI Narratives</em>
+        <span class="pc-desc">Q. Yi, Y. He, &hellip;, <strong>X. Yuan</strong> (7/20), et al. &middot; LARS Workshop &middot; <a href="https://arxiv.org/abs/2503.23512" target="_blank" rel="noopener">arXiv</a> &middot; <a href="https://openreview.net/forum?id=IU61Y0eLZD" target="_blank" rel="noopener">OpenReview</a></span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ───── Selected Projects ───── -->
+  <section id="projects">
+    <h2>Selected Projects</h2>
+
+    <div class="project-entry">
+      <div class="pe-head">
+        <div class="pe-title">Web3 Multi-Agent Automation — Autonomous Browser &amp; DeFi Operations</div>
+        <div class="pe-when">2025</div>
+      </div>
+      <div class="pe-tagline">Exploratory project</div>
+      <p class="pe-desc">A multi-agent system combining LangChain, Playwright, and Vision-Language Models for autonomous Web3 task execution. Agents perform real-time browser vision analysis (Twitter, Discord, DEX UIs), coordinated through a WebSocket-based controller with a SpringBoot back-end. End-to-end autonomous DeFi trading on PancakeSwap — no scripts, no manual input required.</p>
+      <div class="pe-honors">
+        🎬 <a href="https://www.youtube.com/watch?v=vHyT3HUtc5w" target="_blank" rel="noopener"><strong>Demo video</strong></a> (published on Tearline channel)
+      </div>
+    </div>
+
+    <div class="project-entry">
+      <div class="pe-head">
+        <div class="pe-title">Guzheng AI — An AI-Powered Learning App for Traditional Chinese Music</div>
+        <div class="pe-when">2021 – 2022</div>
+      </div>
+      <div class="pe-tagline">Undergraduate project, Tongji University</div>
+      <p class="pe-desc">An audio-analysis pipeline that gives real-time pedagogical feedback to students learning <em>guzheng</em>, a traditional Chinese string instrument. The system listens to a student's playing, detects deviations in pitch, rhythm, and articulation against canonical performances, and suggests targeted exercises — lowering the barrier for self-learners without access to a private teacher.</p>
+      <div class="pe-honors">
+        🥈 <strong>Silver Prize</strong>, "Internet+" Shanghai Innovation &amp; Entrepreneurship Contest &nbsp;·&nbsp;
+        🥈 <strong>2nd Prize</strong>, Shanghai University Cultural Creative Contest &nbsp;·&nbsp;
+        📜 Registered <strong>Software Copyright</strong> (China)
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── Honors & Awards ───── -->
+  <section id="honors">
+    <h2>Honors &amp; Awards</h2>
+    <div class="honor"><div><strong>Promotion</strong>, TikTok Live Recommendation</div><div class="date">Mar. 2026</div></div>
+    <div class="honor"><div><strong>Best New Hire</strong>, TikTok Recommendation Systems</div><div class="date">Dec. 2025</div></div>
+    <div class="honor"><div>M.S. completed at Washington University in St. Louis, GPA 3.70/4.00</div><div class="date">May. 2025</div></div>
+    <div class="honor"><div><strong>Dean's Select Fellowship</strong>, Washington University in St. Louis (Department of Computer Science)</div><div class="date">Nov. 2023</div></div>
+    <div class="honor"><div><strong>Outstanding Graduate</strong> · Class rank 1/54, Tongji University</div><div class="date">Jul. 2023</div></div>
+    <div class="honor"><div>B.E. completed at Tongji University</div><div class="date">Jul. 2023</div></div>
+    <div class="honor"><div><strong>First-Class Scholarship</strong> (×2), Tongji University</div><div class="date">2021 &amp; 2022</div></div>
+    <div class="honor"><div><strong>1st Prize</strong>, Shanghai Computer Application Contest</div><div class="date">2022</div></div>
+    <div class="honor"><div><strong>Honorable Mention</strong>, MCM/ICM (Mathematical Contest in Modeling)</div><div class="date">Feb. 2022</div></div>
+    <div class="honor"><div><strong>1st Prize (National)</strong>, China National College Physics Experiment Competition</div><div class="date">2021</div></div>
+  </section>
+
+  <!-- ───── About ───── -->
+  <section class="about" id="about">
+    <h2>About Me</h2>
+    <p>Before grad school, I spent 4 months as a volunteer teacher at a rural school in Yongping County, Yunnan. It remains one of the more grounding experiences I've had — a reminder that some of the most interesting problems live well outside the bubble of frontier labs.</p>
+    <div class="todo">
+      <strong>To add:</strong> a few more personal notes — interests, hobbies, side passions, what I'm reading.
+    </div>
+  </section>
+
+  <!-- ───── Blog (external) ───── -->
+  <section id="blog">
+    <h2>Blog &amp; Knowledge Base</h2>
+    <a class="blog-card" href="https://roseyuan12138.github.io/my-blog/" target="_blank" rel="noopener">
+      <div class="blog-card-emoji">🐱</div>
+      <div class="blog-card-meta">
+        <strong class="blog-card-title">roseyuan12138.github.io/my-blog</strong>
+        <span class="blog-card-desc">A fully AI-managed personal blog and knowledge base. The whole thing is autonomously curated, written, and published by my <strong>OpenClaw</strong> multi-agent system — its head admin is an agent named <strong>minicat</strong> 🐱, who reads what I read, sorts my notes, and ships posts on my behalf.</span>
+        <span class="blog-card-cta">Visit blog →</span>
+      </div>
+    </a>
+  </section>
+
+</main>
+
+<footer>
+  <div class="updated">Last updated: May 2026</div>
+  <div>Built with a layout inspired by <a href="https://github.com/luost26/academic-homepage">academic-homepage</a></div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     VISITOR WIDGET — Static preview.
+     To replace with a real spinning 3D globe that tracks actual visitors:
+       1. Sign up at https://revolvermaps.com/  (free)
+       2. Create a "Live Statistics Globe" widget
+       3. Copy the <script> tag they give you
+       4. Replace the entire .visitor-widget block below with their script
+     ─────────────────────────────────────────────────────────────────── -->
+<div class="visitor-widget" id="visitorWidget">
+  <button class="vw-close" id="vwClose" type="button" aria-label="Hide visitor map" title="Hide">×</button>
+  <div class="vw-label">Visitors</div>
+  <svg class="vw-globe" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="vwGlobe" cx="35%" cy="30%">
+        <stop offset="0%"  stop-color="#6fa3c9"/>
+        <stop offset="55%" stop-color="#2c5f7e"/>
+        <stop offset="100%" stop-color="#15334a"/>
+      </radialGradient>
+      <pattern id="vwGrid" width="10" height="10" patternUnits="userSpaceOnUse">
+        <circle cx="5" cy="5" r="0.6" fill="rgba(255,255,255,0.18)"/>
+      </pattern>
+    </defs>
+    <circle cx="100" cy="100" r="82" fill="url(#vwGlobe)"/>
+    <circle cx="100" cy="100" r="82" fill="url(#vwGrid)"/>
+    <g fill="rgba(122, 168, 122, 0.78)">
+      <path d="M55 65 Q60 55 75 60 Q88 64 82 80 Q76 96 60 94 Q48 88 55 65"/>
+      <path d="M104 60 Q116 56 122 70 Q120 80 110 78 Q100 74 104 60"/>
+      <path d="M128 64 Q146 58 154 76 Q152 90 134 88 Q122 82 128 64"/>
+      <path d="M108 96 Q120 96 122 112 Q117 132 108 130 Q98 122 108 96"/>
+      <path d="M68 110 Q80 108 82 126 Q78 146 70 144 Q62 130 68 110"/>
+      <path d="M138 132 Q156 128 160 142 Q152 150 140 147 Q132 140 138 132"/>
+    </g>
+    <ellipse cx="100" cy="100" rx="82" ry="22" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <ellipse cx="100" cy="100" rx="22" ry="82" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <ellipse cx="100" cy="100" rx="55" ry="82" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <ellipse cx="78" cy="76" rx="26" ry="18" fill="rgba(255,255,255,0.14)"/>
+    <circle class="vw-dot" cx="68"  cy="74"  r="2.4"/>
+    <circle class="vw-dot" cx="115" cy="70"  r="2.4"/>
+    <circle class="vw-dot" cx="142" cy="80"  r="2.4"/>
+    <circle class="vw-dot" cx="112" cy="118" r="2.4"/>
+    <circle class="vw-dot" cx="75"  cy="128" r="2.4"/>
+    <circle class="vw-dot" cx="148" cy="140" r="2.4"/>
+    <circle class="vw-dot" cx="85"  cy="92"  r="2.4"/>
+    <circle class="vw-dot" cx="128" cy="98"  r="2.4"/>
+  </svg>
+  <div class="vw-stats">
+    <strong>1,247</strong> visits<br>
+    from <strong>38</strong> countries
+  </div>
+</div>
+
+<script>
+  (function () {
+    var btn = document.getElementById('themeToggle');
+    if (btn) {
+      btn.addEventListener('click', function () {
+        var current = document.documentElement.getAttribute('data-theme') || 'light';
+        var next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+      });
+    }
+    try {
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      mq.addEventListener && mq.addEventListener('change', function (e) {
+        if (!localStorage.getItem('theme')) {
+          document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+        }
+      });
+    } catch (e) {}
+
+    var widget = document.getElementById('visitorWidget');
+    var closeBtn = document.getElementById('vwClose');
+    try {
+      if (localStorage.getItem('vw_hidden') === '1' && widget) {
+        widget.classList.add('is-hidden');
+      }
+    } catch (e) {}
+    if (closeBtn && widget) {
+      closeBtn.addEventListener('click', function () {
+        widget.classList.add('is-hidden');
+        try { localStorage.setItem('vw_hidden', '1'); } catch (e) {}
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>
